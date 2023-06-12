@@ -18,8 +18,9 @@ app.get('/hello',(req, res) => {
 });
 
 app.post("/list", async (req, res) => {
-  const textItem = await req.body.text
-  texts.push(textItem)
+  const textItem = await req.body["input-text"]
+  let inputValue = document.getElementById("text-input");
+  texts.push(inputValue)
   res.json({text:texts});
   
 
